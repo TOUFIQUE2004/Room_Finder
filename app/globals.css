@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-fraunces);
+  --color-cream: #f7f3ea;
+  --color-paper: #fffdf9;
+  --color-ink: #17322d;
+  --color-ink-soft: #4f645e;
+  --color-terracotta: #c85d3a;
+  --color-terracotta-dark: #a84526;
+  --color-sage: #dfe8dd;
+  --color-butter: #f1d38d;
+  --color-line: #dfd9cc;
+  --color-mist: #eef0e8;
+}
+
+:root {
+  --background: #f7f3ea;
+  --foreground: #17322d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #f1d38d;
+  color: #17322d;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  outline-offset: 3px;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.container-page {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container-page {
+    padding-inline: 2rem;
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #4f645e;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background: #c85d3a;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(23, 50, 45, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 50, 45, 0.045) 1px, transparent 1px);
+  background-size: 3.25rem 3.25rem;
+  mask-image: radial-gradient(ellipse at 70% 30%, black 20%, transparent 72%);
+}
+
+.soft-shadow {
+  box-shadow:
+    0 1px 1px rgba(23, 50, 45, 0.03),
+    0 16px 45px -20px rgba(23, 50, 45, 0.25);
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.6s ease-out both;
+}
